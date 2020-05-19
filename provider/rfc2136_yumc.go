@@ -304,6 +304,7 @@ func (r rfc2136_yumcProvider) SendMessage(msg *dns.Msg) error {
 	log.Debugf("SendMessage")
 
 	c := new(dns.Client)
+	c.Net = "tcp"
 	c.SingleInflight = true
 
 	if !r.insecure {
